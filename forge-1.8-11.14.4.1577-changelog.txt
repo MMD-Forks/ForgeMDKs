@@ -1,5 +1,46 @@
 Changelog:
-Build 1563:
+Build 1577:
+	fry: Implemented interpolation of TRSR transformations; B3D: added interpolation capabilities to B3DState, animated TESR example in ModelAnimationTest (pure TESR right now, no separation inside the example model between the static and dynamic parts right now).
+	fry: B3D loader: removed 2 redundand null checks, changed constructor args to final to fix (java6?) inner arg error.
+	fry: Fix holes in generated item models.
+	fry: Removed face doubles from item models.
+	fry: Fixed forge lighting working incorrectly outside 0x1000000 coordinates.
+
+Build 1.8.8-11.14.4.1576-1.8.8:
+	cpw: Fix derpy fir trees in the taiga. So many patches. See if we can find any more mistakes?!
+
+Build 1.8.8-11.14.4.1575-1.8.8:
+	cpw: Small tweak to the OUT/ERR logger - should skip the Throwable stuffs now.
+	cpw:
+		Fix weird patch issue where the this FG commit: https://github.com/MinecraftForge/ForgeGradle/commit/2f0ca9921b961133689d29b807333241010a802d
+		breaks if the exact end of a line is a srgname. Not ideal, but should work.
+
+Build 1.8-11.14.4.1572:
+	LexManos: Fix invalid position passed to isAir/getLight in World.playAmbientSound
+
+Build 1.8-11.14.4.1571:
+	Choonster.2010: BiomeManager: Fix off-by-one errors
+
+Build 1.8-11.14.4.1570:
+	LexManos: Fix bold font rendering, Unicode is 2x pixel density of normal.
+
+Build 1.8-11.14.4.1569:
+	LexManos: Enable the normal ModList GUI in game. Use GL_SCISSOR to support the transparent in-game GUI.
+
+Build 1.8-11.14.4.1568:
+	LexManos: Fix incorrect position passes to Block.getExplosionResistance from entities.
+	LexManos: Moved client side Block.onBlockDestroyed to after Item.onBlockDestroyed to match server order.
+
+Build 1.7.10-10.13.4.1566-1.7.10:
+	scott: Add an event hook to allow overriding of fuels recognized by vanilla fuel handling.
+
+Build 1.8-11.14.4.1565:
+	lumien231: Fix Client Login Issue when logging into a non existent dimension
+
+Build 1.7.10-10.13.4.1564-1.7.10:
+	LexManos: Fixed skulls not placing on fences like vanilla {Vanilla is buggy -.-} Closes #2185
+
+Build 1.8-11.14.4.1563:
 	LexManos: Bump version for Recomended Build.
 
 Build 1.8-11.14.3.1562:
