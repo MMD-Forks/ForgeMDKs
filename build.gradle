@@ -56,7 +56,7 @@ compileJava {
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
     version = '1.7.2-10.12.2.1161-mc172'
-    assetDir = 'eclipse/assets'
+    runDir = 'run'
 }
 
 repositories {
