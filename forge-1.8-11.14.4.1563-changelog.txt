@@ -1,190 +1,5 @@
 Changelog:
-Build 1614:
-	LexManos: Fix dispensers equipping armor on players in the wrong slot Closes #1649
-
-Build 1.8.8-11.15.0.1613-1.8.8:
-	bx9j52xd: Fixed that oldLight is not being used.
-
-Build 1.8.8-11.15.0.1612-1.8.8:
-	fry: Workaround for https://github.com/google/guava/issues/738
-
-Build 1.8.8-11.15.0.1611-1.8.8:
-	fry: Fixed orientations of generated item faces. Fixes #2215.
-
-Build 1.8.8-11.15.0.1610-1.8.8:
-	LexManos: Remove MCP reference patches.
-	LexManos: Fixed colored leather armor, and custom armor textures.
-
-Build 1.8.8-11.15.0.1609-1.8.8:
-	cpw: Add a flag to the modidremapping event. If the remapevent is because the registry is refreezing, it'll be true.
-
-Build 1.8.8-11.15.0.1608-1.8.8:
-	cpw: Clean up chunk patch.
-
-Build 1.8.8-11.15.0.1607-1.8.8:
-	mark.a.woodman:
-		Initialize sources list
-		
-		Fixes crash NPE thrown by addFile()
-
-Build 1.8.8-11.15.0.1606-1.8.8:
-	cpw: Most requested feature of all time? TileEntity init method called after it's ready to roll. remove all the if (firstTicks)
-
-Build 1.8.8-11.15.0.1605-1.8.8:
-	cpw:
-		Fix language adapter loading.
-		
-		The language adapter is now properly picked up after the mod is loaded
-		on the classpath, fixing the ClassNotFoundException occurring before.
-		Also fixed some minor formatting and made it throw a full
-		RuntimeException on failure.
-		
-		Fix up some formatting
-
-Build 1.8.8-11.15.0.1604-1.8.8:
-	cpw: Be noisy when API is in a coremod. It'll never work and modders should realize that fact.
-
-Build 1.8.8-11.15.0.1603-1.8.8:
-	tehgeek: Allow server to access Potion isBadEffect()
-
-Build 1.8.8-11.15.0.1602-1.8.8:
-	kashike: Use the FMLSecurityManager checkPermission(Permission) method for context-based permission checks. Fixes #2067
-
-Build 1.8.8-11.15.0.1601-1.8.8:
-	cpw: Allow entity selectors to select "." in entity names. Closes #2125
-
-Build 1.8.8-11.15.0.1600-1.8.8:
-	minecrell: Add jline-based console with colors and tab-completion
-	bernhard.bonigl: Add a PotionRegistry to handle dynamic distribution and remapping of Potion IDs
-	cpw: Some tweaks - GameRegistry is modder facing API, so avoid having MC methods there. Fix a couple of registry bugs.
-	cpw: Fixup Jline integration
-	cpw: A few fixes
-
-Build 1.8.8-11.15.0.1596-1.8.8:
-	cpw: Fix problem with spam from registry on loading a second world. Empty the staging.
-
-Build 1.8.8-11.15.0.1595-1.8.8:
-	lumien231: Fixed: The Integrated Server not being stopped when exiting a singleplayer world to the main menu
-
-Build 1.8.8-11.15.0.1594-1.8.8:
-	LexManos: Add chunk loading protection to WorldSever.getTileEntitiesIn, may prevent orphanced chunks and a CME in EntityPlayerMP. Note: The 'max' parameters are NON-inclusive.
-	cpw: Fix up blockstate rebuild. Closes #2221. Also fix formatting. IDEA has differences. Solved now.
-
-Build 1.8.8-11.15.0.1592-1.8.8:
-	cpw: Giant registry fixup
-
-Build 1.8.8-11.15.0.1591-1.8.8:
-	LexManos: Bump version for new Minecraft version.
-	LexManos: Fixed placing blocks on snow layers with more then one layer.
-	LexManos: Fixed Large mushrooms generating incorrectly.
-	LexManos: Removed IItemRenderer class, all functionality is possible with new rendering system.
-	LexManos: Compiler warnings pass, undeprecated SplashProgress related stuff.
-
-Build 1.8.8-11.14.4.1590-1.8.8:
-	cpw: Propogate AbortException. Closes #2206. Also fix tracing printstream when printStackTrace is called.
-
-Build 1.8.8-11.14.4.1589-1.8.8:
-	cpw: Fix up a couple of patches, affected by the recent update
-	cpw:
-		Add .exc for StatList patch
-		
-		More tweaking
-
-Build 1.8.8-11.14.4.1588-1.8.8:
-	cpw: Fix button and lever placement problem. Closes #2204
-
-Build 1.8.8-11.14.4.1587-1.8.8:
-	lordillyohs:
-		Remove trailing */ in the build.gradle
-		
-		Signed-off-by: Anthony Anderson <lordillyohs@gmail.com>
-
-Build 1.8.8-11.14.4.1586-1.8.8:
-	cpw: Cleaning up some derpy names
-	cpw: More cleanups, some documentation, a bunch of deprecations.
-
-Build 1.8.8-11.14.4.1585-1.8.8:
-	cpw: Deprecate it as well, because hey, it's redundant now.
-	cpw: Clean up some very long dead code. Bukkit hasn't existed in a very long time now. IASM never worked, and I'm not about to implement it.
-
-Build 1.8.8-11.14.4.1584-1.8.8:
-	cpw: ONE EVENT BUS TO RULE THEM ALL AND IN THE DARKNESS FIRE THEM!
-
-Build 1.8.8-11.14.4.1583-1.8.8:
-	cpw: Fix MDK for 1.8.8 using FG2.1 snapshot
-	cpw: Yeah, amount is NOT deprecated.
-
-Build 1.8.8-11.14.4.1582-1.8.8:
-	cpw:
-		OMG! Documentation? WUT? I haz lost my mind.
-		Also, Functional interface for IMC. Senders can send a classname implementing Guava's function, and receivers
-		will be able to get that function, and do, well, whatever, really. Probably best for those callback type
-		scenarios, connecting up APIs and stuffs.
-
-Build 1.8.8-11.14.4.1581-1.8.8:
-	cpw: Cleanup Fluid deprecations stuff.
-
-Build 1.8.8-11.14.4.1580-1.8.8:
-	LexManos: Update universal manifest for 1.8.8's json.
-
-Build 1.8.8-11.14.4.1579-1.8.8:
-	fry: Fixed NPE is B3D loader caused by the missing vertex normal; updated the example chest model - it's now has 2 meshes; Updated ModelAnimationDebug - it now uses the new chest model, renders the base with the static world renderer, and only the lid with the TESR.
-	LexManos: Fix incorrect position passes to Block.getExplosionResistance from entities.
-	LexManos: Moved client side Block.onBlockDestroyed to after Item.onBlockDestroyed to match server order.
-	LexManos: Enable the normal ModList GUI in game. Use GL_SCISSOR to support the transparent in-game GUI.
-	Choonster.2010: BiomeManager: Fix off-by-one errors
-	LexManos: Fix bold font rendering, Unicode is 2x pixel density of normal.
-	LexManos: Fix invalid position passed to isAir/getLight in World.playAmbientSound
-	fry: Fixed forge lighting working incorrectly outside 0x1000000 coordinates.
-	fry: Implemented interpolation of TRSR transformations; B3D: added interpolation capabilities to B3DState, animated TESR example in ModelAnimationTest (pure TESR right now, no separation inside the example model between the static and dynamic parts right now).
-	fry: B3D loader: removed 2 redundand null checks, changed constructor args to final to fix (java6?) inner arg error.
-	fry: Fix holes in generated item models.
-	fry: Removed face doubles from item models.
-	fry: Fixed forge lighting working incorrectly outside 0x1000000 coordinates.
-	cpw: Update mappings to 20151122.
-
-Build 1.8-11.14.4.1577:
-	fry: Implemented interpolation of TRSR transformations; B3D: added interpolation capabilities to B3DState, animated TESR example in ModelAnimationTest (pure TESR right now, no separation inside the example model between the static and dynamic parts right now).
-	fry: B3D loader: removed 2 redundand null checks, changed constructor args to final to fix (java6?) inner arg error.
-	fry: Fix holes in generated item models.
-	fry: Removed face doubles from item models.
-	fry: Fixed forge lighting working incorrectly outside 0x1000000 coordinates.
-
-Build 1.8.8-11.14.4.1576-1.8.8:
-	cpw: Fix derpy fir trees in the taiga. So many patches. See if we can find any more mistakes?!
-
-Build 1.8.8-11.14.4.1575-1.8.8:
-	cpw: Small tweak to the OUT/ERR logger - should skip the Throwable stuffs now.
-	cpw:
-		Fix weird patch issue where the this FG commit: https://github.com/MinecraftForge/ForgeGradle/commit/2f0ca9921b961133689d29b807333241010a802d
-		breaks if the exact end of a line is a srgname. Not ideal, but should work.
-
-Build 1.8-11.14.4.1572:
-	LexManos: Fix invalid position passed to isAir/getLight in World.playAmbientSound
-
-Build 1.8-11.14.4.1571:
-	Choonster.2010: BiomeManager: Fix off-by-one errors
-
-Build 1.8-11.14.4.1570:
-	LexManos: Fix bold font rendering, Unicode is 2x pixel density of normal.
-
-Build 1.8-11.14.4.1569:
-	LexManos: Enable the normal ModList GUI in game. Use GL_SCISSOR to support the transparent in-game GUI.
-
-Build 1.8-11.14.4.1568:
-	LexManos: Fix incorrect position passes to Block.getExplosionResistance from entities.
-	LexManos: Moved client side Block.onBlockDestroyed to after Item.onBlockDestroyed to match server order.
-
-Build Build Artifacts:<ul><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1566-1.7.10/forge-1.7.10-10.13.4.1566-1.7.10-userdev.jar">forge-1.7.10-10.13.4.1566-1.7.10-userdev.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1566-1.7.10/forge-1.7.10-10.13.4.1566-1.7.10-src.zip">forge-1.7.10-10.13.4.1566-1.7.10-src.zip</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1566-1.7.10/forge-1.7.10-10.13.4.1566-1.7.10-changelog.txt">forge-1.7.10-10.13.4.1566-1.7.10-changelog.txt</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1566-1.7.10/forge-1.7.10-10.13.4.1566-1.7.10-installer.jar">forge-1.7.10-10.13.4.1566-1.7.10-installer.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1566-1.7.10/forge-1.7.10-10.13.4.1566-1.7.10-universal.jar">forge-1.7.10-10.13.4.1566-1.7.10-universal.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1566-1.7.10/forge-1.7.10-10.13.4.1566-1.7.10-installer-win.exe">forge-1.7.10-10.13.4.1566-1.7.10-installer-win.exe</a></ul>:
-	scott: Add an event hook to allow overriding of fuels recognized by vanilla fuel handling.
-
-Build 1.8-11.14.4.1565:
-	lumien231: Fix Client Login Issue when logging into a non existent dimension
-
-Build Build Artifacts:<ul><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1564-1.7.10/forge-1.7.10-10.13.4.1564-1.7.10-universal.jar">forge-1.7.10-10.13.4.1564-1.7.10-universal.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1564-1.7.10/forge-1.7.10-10.13.4.1564-1.7.10-src.zip">forge-1.7.10-10.13.4.1564-1.7.10-src.zip</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1564-1.7.10/forge-1.7.10-10.13.4.1564-1.7.10-installer-win.exe">forge-1.7.10-10.13.4.1564-1.7.10-installer-win.exe</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1564-1.7.10/forge-1.7.10-10.13.4.1564-1.7.10-installer.jar">forge-1.7.10-10.13.4.1564-1.7.10-installer.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1564-1.7.10/forge-1.7.10-10.13.4.1564-1.7.10-changelog.txt">forge-1.7.10-10.13.4.1564-1.7.10-changelog.txt</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1564-1.7.10/forge-1.7.10-10.13.4.1564-1.7.10-userdev.jar">forge-1.7.10-10.13.4.1564-1.7.10-userdev.jar</a></ul>:
-	LexManos: Fixed skulls not placing on fences like vanilla {Vanilla is buggy -.-} Closes #2185
-
-Build 1.8-11.14.4.1563:
+Build 1563:
 	LexManos: Bump version for Recomended Build.
 
 Build 1.8-11.14.3.1562:
@@ -220,14 +35,14 @@ Build 1.8-11.14.3.1559:
 		but if your mod was dependent on their being content in the remap event, and only acting on that content,
 		empty content means it's "reverted to frozen" state - the state at the start of the game.
 
-Build Build Artifacts:<ul><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forge-1.7.10-10.13.4.1558-1.7.10-src.zip">forge-1.7.10-10.13.4.1558-1.7.10-src.zip</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forge-1.7.10-10.13.4.1558-1.7.10-userdev.jar">forge-1.7.10-10.13.4.1558-1.7.10-userdev.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forge-1.7.10-10.13.4.1558-1.7.10-changelog.txt">forge-1.7.10-10.13.4.1558-1.7.10-changelog.txt</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forge-1.7.10-10.13.4.1558-1.7.10-installer.jar">forge-1.7.10-10.13.4.1558-1.7.10-installer.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forge-1.7.10-10.13.4.1558-1.7.10-installer-win.exe">forge-1.7.10-10.13.4.1558-1.7.10-installer-win.exe</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forge-1.7.10-10.13.4.1558-1.7.10-universal.jar">forge-1.7.10-10.13.4.1558-1.7.10-universal.jar</a></ul>:
+Build 1.7.10-10.13.4.1558-1.7.10:
 	cpw:
 		Fix firing the remap event. It always fires now, and additionally fires when the registry reverts to frozen.
 		Most mods refer to the gameregistry for ids they care about, so this shouldn't affect anything significantly,
 		but if your mod was dependent on their being content in the remap event, and only acting on that content,
 		empty content means it's "reverted to frozen" state - the state at the start of the game.
 
-Build Build Artifacts:<ul><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1557-1.7.10/forge-1.7.10-10.13.4.1557-1.7.10-installer-win.exe">forge-1.7.10-10.13.4.1557-1.7.10-installer-win.exe</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1557-1.7.10/forge-1.7.10-10.13.4.1557-1.7.10-universal.jar">forge-1.7.10-10.13.4.1557-1.7.10-universal.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1557-1.7.10/forge-1.7.10-10.13.4.1557-1.7.10-changelog.txt">forge-1.7.10-10.13.4.1557-1.7.10-changelog.txt</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1557-1.7.10/forge-1.7.10-10.13.4.1557-1.7.10-userdev.jar">forge-1.7.10-10.13.4.1557-1.7.10-userdev.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1557-1.7.10/forge-1.7.10-10.13.4.1557-1.7.10-installer.jar">forge-1.7.10-10.13.4.1557-1.7.10-installer.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1557-1.7.10/forge-1.7.10-10.13.4.1557-1.7.10-src.zip">forge-1.7.10-10.13.4.1557-1.7.10-src.zip</a></ul>:
+Build 1.7.10-10.13.4.1557-1.7.10:
 	cpw: Two more corner cases in the oredictionary. Should work for all cases now.
 
 Build 1.8-11.14.3.1556:
@@ -279,12 +94,12 @@ Build 1.8-11.14.3.1543:
 	fry: Fix color multiplier applied incorrectly for items.
 	fry: OBJ loader: fixed another whitespace-related issue; removed unused "modifyUVs" property for now; added the "flip-v" property to switch between OpenGL-style and DirextX-style model UVs; fixed normals - they are now correct in-world, still a bit strange for the items; fixed normals a little bit for B3D models too.
 
-Build Build Artifacts:<ul><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1541-1.7.10/forge-1.7.10-10.13.4.1541-1.7.10-userdev.jar">forge-1.7.10-10.13.4.1541-1.7.10-userdev.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1541-1.7.10/forge-1.7.10-10.13.4.1541-1.7.10-installer.jar">forge-1.7.10-10.13.4.1541-1.7.10-installer.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1541-1.7.10/forge-1.7.10-10.13.4.1541-1.7.10-installer-win.exe">forge-1.7.10-10.13.4.1541-1.7.10-installer-win.exe</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1541-1.7.10/forge-1.7.10-10.13.4.1541-1.7.10-changelog.txt">forge-1.7.10-10.13.4.1541-1.7.10-changelog.txt</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1541-1.7.10/forge-1.7.10-10.13.4.1541-1.7.10-src.zip">forge-1.7.10-10.13.4.1541-1.7.10-src.zip</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1541-1.7.10/forge-1.7.10-10.13.4.1541-1.7.10-universal.jar">forge-1.7.10-10.13.4.1541-1.7.10-universal.jar</a></ul>:
+Build 1.7.10-10.13.4.1541-1.7.10:
 	cpw:
 		OreDictionary will warn if there's an invalid ore being registered now, rather than just
 		using -1 and doing weird things with the list as a result.
 
-Build Build Artifacts:<ul><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1539-1.7.10/forge-1.7.10-10.13.4.1539-1.7.10-installer.jar">forge-1.7.10-10.13.4.1539-1.7.10-installer.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1539-1.7.10/forge-1.7.10-10.13.4.1539-1.7.10-changelog.txt">forge-1.7.10-10.13.4.1539-1.7.10-changelog.txt</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1539-1.7.10/forge-1.7.10-10.13.4.1539-1.7.10-universal.jar">forge-1.7.10-10.13.4.1539-1.7.10-universal.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1539-1.7.10/forge-1.7.10-10.13.4.1539-1.7.10-userdev.jar">forge-1.7.10-10.13.4.1539-1.7.10-userdev.jar</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1539-1.7.10/forge-1.7.10-10.13.4.1539-1.7.10-src.zip">forge-1.7.10-10.13.4.1539-1.7.10-src.zip</a><li><a href="scp://files.minecraftforge.net/home/files/files.minecraftforge.net/mavennet/minecraftforge/forge/1.7.10-10.13.4.1539-1.7.10/forge-1.7.10-10.13.4.1539-1.7.10-installer-win.exe">forge-1.7.10-10.13.4.1539-1.7.10-installer-win.exe</a></ul>:
+Build 1.7.10-10.13.4.1539-1.7.10:
 	diesieben07: Fix CME when entities are spawned from EntityJoinWorldEvent
 	bernhard.bonigl: Fix Potion IDs above 127
 	Abrar Syed: Update FG version to 2.0.2
