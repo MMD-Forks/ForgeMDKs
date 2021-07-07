@@ -31,10 +31,6 @@ buildscript {
             name = 'forge'
             url = 'https://maven.minecraftforge.net'
         }
-        maven {
-            name = 'sonatype'
-            url = 'https://oss.sonatype.org/content/repositories/snapshots/'
-        }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
@@ -55,8 +51,15 @@ compileJava {
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    version = '1.7.2-10.12.2.1161-mc172'
-    assetDir = 'eclipse/assets'
+    version = '1.7.10-10.13.4.1614-1.7.10'
+    runDir = 'run'
+
+    // The mappings can be changed at any time, and must be in the following format.
+    // snapshot_YYYYMMDD   Snapshots are built nightly.
+    // stable_#            Stables are built at the discretion of the MCP team.
+    // Use non-default mappings at your own risk. they may not allways work.
+    // simply re-run your setup task after changing the mappings to update your workspace.
+    mappings = 'stable_12'
 }
 
 repositories {
@@ -136,9 +139,9 @@ idea.module {
   inheritOutputDirs = true
 }
 
-if (GradleVersion.current() <= GradleVersion.version('1.5')) {
+if (GradleVersion.current() <= GradleVersion.version('2.3')) {
     task wrapper(type: Wrapper) {
-        gradleVersion = '1.12'
+        gradleVersion = '2.14.1'
         if (GradleVersion.current() >= GradleVersion.version('1.0') && GradleVersion.current() <= GradleVersion.version('1.11')) {
             distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-bin.zip"
         }
