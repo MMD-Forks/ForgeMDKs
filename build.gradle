@@ -1,0 +1,127 @@
+buildscript {
+    repositories {
+        // Doesn't work on Gradle 1.0
+        if ((GradleVersion.current() >= GradleVersion.version('2.0')) && (JavaVersion.current().isJava8Compatible())) {
+        // Doesn't work on Gradle 1.0-1.5
+            removeIf { it instanceof MavenArtifactRepository && it.url.host == 'repo1.maven.org' }
+            removeIf { it instanceof MavenArtifactRepository && it.url.host == 'files.minecraftforge.net' }
+            removeIf { it instanceof MavenArtifactRepository && it.url.host == 'maven.minecraftforge.net' }
+        } else {
+            all {
+                // Doesn't work on Gradle 1.0-1.5
+                ArtifactRepository repo ->
+                if (repo instanceof MavenArtifactRepository) {
+                    if ((repo.url.toString() == 'repo1.maven.org') || (repo.url.toString() == 'files.minecraftforge.net') || (repo.url.toString() == 'maven.minecraftforge.net')) {
+                        remove repo
+                    }
+                }
+            }
+        }
+//      mavenLocal()
+//      mavenCentral()
+        maven {
+            name 'mavenCentral'
+            url = 'https://repo1.maven.org/maven2/'
+        }
+        maven {
+            name = 'mmd'
+            url = 'https://maven.mcmoddev.com'
+        }
+        maven {
+            name = 'forge'
+            url = 'https://maven.minecraftforge.net'
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.0-SNAPSHOT'
+    }
+}
+
+apply plugin: 'forge'
+// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
+
+version = '1.0'
+group = 'com.yourname.modid' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'modid'
+
+sourceCompatibility = targetCompatibility = '1.6' // Need this here so eclipse task generates correctly.
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.6'
+}
+
+println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
+minecraft {
+    version = '1.6.4-9.11.1.964'
+    assetDir = 'eclipse/assets'
+}
+
+repositories {
+    // Doesn't work on Gradle 1.0
+    if ((GradleVersion.current() >= GradleVersion.version('2.0')) && JavaVersion.current().isJava8Compatible()) {
+        // Doesn't work on Gradle 1.0-1.5
+        removeIf { it instanceof MavenArtifactRepository && it.url.host == 'repo1.maven.org' }
+        removeIf { it instanceof MavenArtifactRepository && it.url.host == 'files.minecraftforge.net' }
+        removeIf { it instanceof MavenArtifactRepository && it.url.host == 'maven.minecraftforge.net' }
+    } else {
+        all {
+            // Doesn't work on Gradle 1.0-1.5
+            ArtifactRepository repo ->
+            if (repo instanceof MavenArtifactRepository) {
+                if ((repo.url.toString() == 'repo1.maven.org') || (repo.url.toString() == 'files.minecraftforge.net') || (repo.url.toString() == 'maven.minecraftforge.net')) {
+                    remove repo
+                }
+            }
+        }
+    }
+//  mavenLocal()
+//  mavenCentral()
+    maven {
+        name 'mavenCentral'
+        url = 'https://repo1.maven.org/maven2/'
+    }
+    maven {
+        name = 'mmd'
+        url = 'https://maven.mcmoddev.com'
+    }
+    maven {
+        name = 'forge'
+        url = 'https://maven.minecraftforge.net'
+    }
+}
+
+dependencies {
+}
+
+processResources {
+    // replace stuff in mcmod.info, nothing else
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+
+        // replace version and mcversion
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+
+    // copy everything else except the mcmod.info
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+eclipse.project {
+  buildCommand 'org.eclipse.buildship.core.gradleprojectbuilder'
+  natures 'org.eclipse.buildship.core.gradleprojectnature'
+}
+
+idea.module {
+  downloadJavadoc = true
+  inheritOutputDirs = true
+}
+
+if (GradleVersion.current() <= GradleVersion.version('1.5')) {
+    task wrapper(type: Wrapper) {
+        gradleVersion = '1.12'
+        if (GradleVersion.current() >= GradleVersion.version('1.0') && GradleVersion.current() <= GradleVersion.version('1.11')) {
+            distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-bin.zip"
+        }
+    }
+}
