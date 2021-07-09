@@ -51,7 +51,7 @@ compileJava {
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    version = '1.9.4-12.17.0.2317-1.9.4'
+    version = '1.10-12.18.0.2000-1.10.0'
     runDir = 'run'
 
     // The mappings can be changed at any time, and must be in the following format.
