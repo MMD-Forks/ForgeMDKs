@@ -1,5 +1,313 @@
 Changelog:
-Build 2511:
+Build 2588:
+	bs2609:
+		[1.11] Fix dormant chunk cache allowing entity data to be overwritten
+		(#4672)
+
+Build 1.12.2-14.23.1.2587:
+	bs2609: Fix dormant chunk cache allowing entity data to be overwritten (#4528)
+
+Build 1.12.2-14.23.1.2586:
+	bs2609: Fix dimension data not being saved (#4667)
+
+Build 1.12.2-14.23.1.2585:
+	bartek.bok: Don't copy state from variant to multi-part model (#4629)
+
+Build 1.12.2-14.23.1.2584:
+	josephcsible: Fix vanilla giant jungle trees causing cascading generation (#4652)
+
+Build 1.12.2-14.23.1.2583:
+	knightminer4: Fix Beetroot crops don't break/drop when trampled (#4644)
+
+Build 1.12.2-14.23.1.2582:
+	bartek.bok:
+		Enhance crash message when custom models return null default state
+		(#4615)
+
+Build 1.12.2-14.23.1.2581:
+	mezz: Update Github StaleBot config to run on old Issues as well as PRs
+
+Build 1.12.2-14.23.1.2580:
+	LexManos:
+		Downgrade RegistryEntry's dangerous alternative prefix message to info
+		instead of BigWarning. This is still most likely a broken mod, but
+		nobody ever actually fixes themselves, and i'm tired of being blamed for
+		'spamming' the logs.
+
+Build 1.11.2-13.20.1.2579:
+	bartek.bok: Fix invalid rendering of single-frame B3D models (#3917)
+
+Build 1.12.2-14.23.1.2578:
+	LexManos:
+		Fix missing call to release() in the event channel handler (#4513) 
+		(reverted from commit cd99957627625f7baeff8761c6382b05db9699d3)
+
+Build 1.12.2-14.23.1.2577:
+	Leviathan143:
+		Add some extra context to Advancements/Minecart/Fishing/TileEntity loot
+		handlers.(#4443)
+	mccommanderminecraft: Added Custom Slime Block hook for Piston. (#4520)
+
+Build 1.12.2-14.23.1.2576:
+	bartek.bok: Fix animation of rotated block parts (#4156)
+	bartek.bok: Fix invalid rendering of single-frame B3D models (Fix #3815)
+	bs2609: Adjust diffuse light calculation to match vanilla facing values (#4305)
+	bs2609: Fix applyUVLock not preserving input order (#4336)
+	bs2609: Adjust light matrix calculations to use per-face logic (#4339)
+
+Build 1.12.2-14.23.1.2575:
+	tterrag1098: Fix BakedQuadRetextured not overriding getSprite (#4137)
+
+Build 1.12.2-14.23.1.2574:
+	bs2609: Fix missing call to release() in the event channel handler (#4513)
+	kashike: Delay egg creation to avoid null statistics (#4508)
+	arturzartdinov:
+		Added LivingKnockBackEvent event to allow better control over knock back
+		effects. (#4503)
+
+Build 1.12.2-14.23.1.2573:
+	mrkirby153:
+		Reimplemented TileEntity and Entity Update Profiling in the /forge track
+		command (#4521)
+
+Build 1.12.2-14.23.1.2572:
+	bs2609: Don't enforce IPv4 for clients connecting to IPv6-only servers (#4563)
+	JDLogic: [macOS] Fix missing text on loading error screens (#4532)
+
+Build 1.12.2-14.23.1.2571:
+	bs2609: Add an event for registering block/item colour handlers (#4565)
+
+Build 1.12.2-14.23.1.2570:
+	josephcsible: Deprecate passing a class to CapabilityManager::register (#4574)
+	josephcsible:
+		Make vanilla powered rails receive power from mods' custom powered rail
+		subclasses (#4573)
+	matthewprenger: Fix startIndex for /forge generate position parsing (#4572)
+	AlgorithmX2: BlockFlowerPot now checks solid top side instead of old method. (#4571)
+	AlgorithmX2: Fix: Anvil Bug with Custom Damage Items. (#4570)
+
+Build 1.12.2-14.23.1.2569:
+	mezz:
+		Change how chests check if they're blocked. (#4584)
+		Readd Vanilla Bug: https://bugs.mojang.com/browse/MC-378
+	bs2609: Add missing nullability annotations to some Forge-added methods (#4578)
+
+Build 1.12.2-14.23.1.2568:
+	BillyGalbreath:
+		Allow EntityFishHook to spawn water particles in all liquids that use
+		Material.WATER (#4585)
+
+Build 1.12.2-14.23.1.2567:
+	gegy1000: Add Sound loading progress bar (#4593)
+
+Build 1.12.2-14.23.1.2566:
+	bs2609: Clean up capability checking for entities (#4591)
+
+Build 1.12.2-14.23.1.2565:
+	bs2609: Fix sometimes being unable to extract items from double chests (#4590)
+
+Build 1.12.2-14.23.1.2564:
+	josephcsible:
+		Fix item handler documentation that says returning ItemStack.EMPTY is
+		required (#4587)
+
+Build 1.11.2-13.20.1.2563:
+	bartek.bok: Fix invalid FastTESR quad ordering (#3900)
+
+Build 1.12.2-14.23.1.2562:
+	julian_abelar: Added color as field with setter to Fluid class.  (#4460)
+
+Build 1.12.2-14.23.1.2561:
+	mezz: Prevent tooltips from going off the top of the screen.
+
+Build 1.12.2-14.23.1.2560:
+	Anthony Lomeli: [1.12] Add Advancement Event (#4467)
+
+Build 1.12.2-14.23.1.2559:
+	mezz: Update java docs for IItemHandler. Fix #4553
+
+Build 1.12.2-14.23.1.2558:
+	LexManos: Re-enable Vanilla's Shapeless recipe matching.
+	LexManos: Restore binary compatibility in EntityItemPickupEvent
+
+Build 1.12.2-14.23.1.2557:
+	draco18s:
+		Fix for the EntityItemPickupEvent having 0 count item when event is
+		fired. (#4549)
+
+Build 1.12.2-14.23.1.2556:
+	bs2609: Don't force IPv4 network stack if IPv6 is specifically requested (#4547)
+
+Build 1.12.2-14.23.1.2555:
+	LexManos: Fix more bad shapeless recipe matching. Closes #4557
+
+Build 1.12.2-14.23.1.2554:
+	LexManos: Version bump for Recommended Build.
+
+Build 1.12.2-14.23.0.2553:
+	williewillus: Add TAG_LONG_ARRAY to Constants.NBT (#4552)
+
+Build 1.12.2-14.23.0.2552:
+	LexManos:
+		Create custom shapeless recipe matching system. Should solve #4516
+		damageable items in shapeless recipes.
+
+Build 1.12.2-14.23.0.2551:
+	mezz: Clean up old code for detecting BaseMods. Close #4530 (#4540)
+
+Build 1.12.2-14.23.0.2550:
+	Laughlan Coventry: Fix BufferBuilder not expanding under some conditions. (#4538)
+
+Build 1.12.2-14.23.0.2549:
+	mezz: Add support.yml for support bot on github.
+
+Build 1.12.2-14.23.0.2548:
+	bs2609: Fix errors caused by multi-target messages sent from LAN host (#4536)
+
+Build 1.12.2-14.23.0.2547:
+	bs2609: Fix server icon response leaking buffer (MC-122085) (#4534)
+
+Build 1.12.2-14.23.0.2546:
+	LexManos: Fix CompoundIngredents not working properly in shapeless recipes.
+
+Build 1.12.2-14.23.0.2545:
+	goto.minecraft: [1.12.x] Added BucketUse event to ForgeUniversal Bucket (#4454)
+
+Build 1.12.2-14.23.0.2544:
+	williewillus:
+		Non-player entities now respect WorldProvider.getMovementFactor, closes
+		#4470 (#4471)
+
+Build 1.12.2-14.23.0.2543:
+	bs2609: Fix entity spawn messages not handling buffer correctly (#4524)
+
+Build 1.12.2-14.23.0.2542:
+	LexManos:
+		Make Ingredient explode wildcard values like OreIngredient. Fixes some
+		issues related to Grums order fix for Shapeless recipes. Other more
+		advanced usages need to be documented and tested.
+
+Build 1.12.2-14.23.0.2541:
+	st.kupr:
+		Fix server incorrectly marked as stopped before forge's
+		handleServerStopped() (#4517)
+
+Build 1.12.2-14.23.0.2540:
+	bs2609: Fix network buffer leak with multi-part messages (#4511)
+
+Build 1.12.2-14.23.0.2539:
+	bs2609: Fix buffer leak in vanilla custom payload packet handling (#4512)
+
+Build 1.12.2-14.23.0.2538:
+	bs2609: Fix network buffers not being released in some places (#4510)
+
+Build 1.12.2-14.23.0.2537:
+	JDLogic:
+		Fix resource loading on some mac systems when SplashProgress is enabled
+		(#4082)
+
+Build 1.12.2-14.23.0.2536:
+	bs2609: Change item model alpha tests to match values used for rendering (#4490)
+	bs2609: Fix incorrect lighting of item models (#4493)
+	BillyGalbreath: Fix MC-51150 (#4495)
+
+Build 1.12.2-14.23.0.2535:
+	bartek.bok: Fix NPE when player tries to sleep without bed (#4487)
+
+Build 1.12.2-14.23.0.2534:
+	goto.minecraft: Added tint index of 0 to fluid models (#3938)
+
+Build 1.12.2-14.23.0.2533:
+	bartek.bok: Fix FastTESR quad sort (#4298)
+
+Build 1.12.2-14.23.0.2532:
+	zzzz:
+		Fix the incorrect matching algorithm in ShapelessRecipes and
+		ShapelessOreRecipe (#4472)
+
+Build 1.12.2-14.23.0.2531:
+	bs2609: Fix BlockDynamicLiquid using mismatched state/position pair (#4501)
+
+Build 1.11.2-13.20.1.2530:
+	bs2609: Recalculate chunk heightmap minimum (MC-117412) (#3888)
+
+Build 1.12.2-14.23.0.2529:
+	bs2609: Fix more test mod warnings (#4477)
+
+Build 1.12.2-14.23.0.2528:
+	bartek.bok: Add LivingDamageEvent (#4349)
+
+Build 1.12.2-14.23.0.2527:
+	Zaggy1024: Added a cloud renderer that uploads geometry to the GPU. (#4143)
+	bartek.bok: Add InputUpdateEvent (#4356)
+	yrsegal:
+		Create IRecipeContainer interface and implementation to allow RecipeBook
+		to work on custom GUIs (#4480)
+
+Build 1.12.2-14.23.0.2526:
+	bs2609: [1.12] Replace ThrowableImpactEvent with a more generic version (#4040)
+
+Build 1.12.2-14.23.0.2525:
+	bs2609: Clean up more deprecated library functions (#4283)
+	PProvenzano: Allow custom selector types to be defined (#4259)
+	ctmods01: Fix GameData#revert ignoring RegistryManager parameter (#4232)
+	joe.flatt: Fixed property losing state after rename. (#4123)
+	bs2609: Clean up BlockSnapshot code (#3737)
+
+Build 1.12.2-14.23.0.2524:
+	williewillus: Move reach distance to an attribute (#4331)
+	AEnterprise: Improve performance of World.collidesWithAnyBlock (#4286)
+
+Build 1.12.2-14.23.0.2523:
+	bs2609: Further reduce quad count of generated item models  (#4448)
+	bs2609: Prevent fake players from making advancements (#4438)
+	mezz: Improve the Forge Bucket (#4435)
+	Bward7864:
+		Resolve a crash relating to plantFlower when biome has no flowers
+		(#4381)
+
+Build 1.12.2-14.23.0.2522:
+	bs2609: Recalculate chunk height map minimum on load (#4453)
+	bs2609: Fix killing blow causing combat tracker to lose data (MC-121048) (#4452)
+
+Build 1.12.2-14.23.0.2521:
+	bs2609: Improve performance of inserting into inventory wrappers (#4468)
+	julian_abelar:
+		Changed BlockFluidBase "fog" color use color from Fluid getColor()
+		method (#4462)
+
+Build 1.12.2-14.23.0.2520:
+	LexManos:
+		Fix some locations where State Sensitive Materials were not used. Closes
+		#4474
+
+Build 1.12.2-14.23.0.2519:
+	bs2609: Add caching of data for flat lighting (#4358)
+
+Build 1.12.2-14.23.0.2518:
+	bs2609:
+		Fix spider/chicken jockeys being unable to spawn naturally (MC-103516)
+		(#4429)
+
+Build 1.12.2-14.23.0.2517:
+	mezz: Clean up Forge commands. Add HelpCommand. Fix #4444 (#4451)
+
+Build 1.11.2-13.20.1.2516:
+	bartek.bok: Fix stacked entity item rendering (#3886)
+
+Build 1.12.2-14.23.0.2515:
+	bs2609: Fix some more test mod warnings (#4469)
+
+Build 1.12.2-14.23.0.2514:
+	mincrmatt12: [1.12.x] [Animation API] Add rotation origin variable (#4466)
+
+Build 1.11.2-13.20.1.2513:
+	bs2609: Save/restore dormant chunk entity data from NBT (#3940)
+
+Build 1.12.2-14.23.0.2512:
+	bs2609: Fix some warnings produced by test mods (#4456)
+
+Build 1.10.2-12.18.3.2511:
 	mezz: Fix performance regression in FastTESR rendering
 
 Build 1.11.2-13.20.1.2510:
