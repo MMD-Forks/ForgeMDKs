@@ -13,7 +13,7 @@ like, provided the following conditions are met:
    it is not the original code.
 4) You are not required to give me credit for this class in any derived
    work, but if you do, you must also mention my website:
-   http://www.paulscode.com
+   https://www.paulscode.com
 5) I the author will not be responsible for any damages (physical,
    financial, or otherwise) caused by the use if this class or any
    portion of it.
@@ -22,11 +22,11 @@ like, provided the following conditions are met:
    portion of it.
 
 Author: Paul Lamb
-http://www.paulscode.com
+https://www.paulscode.com
 
 
 This software is based on or using the IBXM library available from
-http://www.geocities.com/sunet2000/
+https://www.geocities.com/sunet2000/
 
 
 IBXM is copyright (c) 2007, Martin Cameron, and is licensed under the BSD License.
