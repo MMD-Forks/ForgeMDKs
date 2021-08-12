@@ -35,7 +35,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
     }
 }
 
@@ -257,7 +257,7 @@ idea.module {
 
 if (GradleVersion.current() <= GradleVersion.version('2.3')) {
     task wrapper(type: Wrapper) {
-        gradleVersion = '6.9'
+        gradleVersion = '7.1.1'
         if (GradleVersion.current() >= GradleVersion.version('1.0') && GradleVersion.current() <= GradleVersion.version('1.11')) {
             distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-bin.zip"
         }
