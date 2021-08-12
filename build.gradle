@@ -1,8 +1,10 @@
 buildscript {
     repositories {
-        // Doesn't work on Gradle 1.0
+        // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
+
+        // Doesn't work on Gradle 1.x
         if ((GradleVersion.current() >= GradleVersion.version('2.0')) && (JavaVersion.current().isJava8Compatible())) {
-        // Doesn't work on Gradle 1.0-1.5
+            // Doesn't work on Gradle 1.0-1.5
             removeIf { it instanceof MavenArtifactRepository && it.url.host == 'repo1.maven.org' }
             removeIf { it instanceof MavenArtifactRepository && it.url.host == 'files.minecraftforge.net' }
             removeIf { it instanceof MavenArtifactRepository && it.url.host == 'maven.minecraftforge.net' }
@@ -37,7 +39,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.1-SNAPSHOT'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '1.1-SNAPSHOT'
     }
 }
 
@@ -48,19 +50,31 @@ version = '1.0'
 group = 'com.yourname.modid' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'modid'
 
-sourceCompatibility = targetCompatibility = '1.6' // Need this here so eclipse task generates correctly.
+// Mojang ships Java 8 to end users, so your mod should target Java 8.
+// Need this here so eclipse task generates correctly.
+sourceCompatibility = targetCompatibility = '1.6'
 compileJava {
     sourceCompatibility = targetCompatibility = '1.6'
 }
 
+// Print out JVM information so that we know what version is running. Extremely useful for people to know when helping you.
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
+
 minecraft {
     version = '1.7.2-10.12.0.1047'
     assetDir = 'eclipse/assets'
 }
 
 repositories {
-    // Doesn't work on Gradle 1.0
+    // Put repositories for dependencies here
+    // ForgeGradle automatically adds the Forge maven and Maven Central for you
+
+    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
+    // flatDir {
+    //     dir 'libs'
+    // }
+
+    // Doesn't work on Gradle 1.x
     if ((GradleVersion.current() >= GradleVersion.version('2.0')) && JavaVersion.current().isJava8Compatible()) {
         // Doesn't work on Gradle 1.0-1.5
         removeIf { it instanceof MavenArtifactRepository && it.url.host == 'repo1.maven.org' }
@@ -94,6 +108,17 @@ repositories {
 }
 
 dependencies {
+    // You may put jars on which you depend on in ./libs or you may define them like so..
+    // compile 'some.group:artifact:version:classifier'
+    // compile 'some.group:artifact:version'
+
+    // Real examples
+    // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
+    // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
+
+    // For more info...
+    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
+    // http://www.gradle.org/docs/current/userguide/dependency_management.html
 }
 
 processResources {
@@ -121,9 +146,9 @@ idea.module {
   inheritOutputDirs = true
 }
 
-if (GradleVersion.current() <= GradleVersion.version('1.5')) {
+if (GradleVersion.current() <= GradleVersion.version('2.3')) {
     task wrapper(type: Wrapper) {
-        gradleVersion = '1.12'
+        gradleVersion = '1.10'
         if (GradleVersion.current() >= GradleVersion.version('1.0') && GradleVersion.current() <= GradleVersion.version('1.11')) {
             distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-bin.zip"
         }
