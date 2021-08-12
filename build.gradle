@@ -29,13 +29,13 @@ buildscript {
             name = 'mmd'
             url = 'https://maven.mcmoddev.com'
         }
-//      maven {
-//          name = 'forge'
-//          url = 'https://maven.minecraftforge.net'
-//      }
+        maven {
+            name = 'forge'
+            url = 'https://maven.minecraftforge.net'
+        }
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true
     }
 }
 
@@ -49,8 +49,7 @@ group = 'com.yourname.modid' // http://maven.apache.org/guides/mini/guide-naming
 archivesBaseName = 'modid'
 
 // Mojang ships Java 8 to end users, so your mod should target Java 8.
-// Need this here so eclipse task generates correctly.
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
 // Print out JVM information so that we know what version is running. Extremely useful for people to know when helping you.
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + ' (' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
@@ -258,7 +257,7 @@ idea.module {
 
 if (GradleVersion.current() <= GradleVersion.version('2.3')) {
     task wrapper(type: Wrapper) {
-        gradleVersion = '4.9'
+        gradleVersion = '6.9'
         if (GradleVersion.current() >= GradleVersion.version('1.0') && GradleVersion.current() <= GradleVersion.version('1.11')) {
             distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-bin.zip"
         }
