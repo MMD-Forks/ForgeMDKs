@@ -1,8 +1,10 @@
 buildscript {
     repositories {
-        // Doesn't work on Gradle 1.0
+        // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
+
+        // Doesn't work on Gradle 1.x
         if ((GradleVersion.current() >= GradleVersion.version('2.0')) && (JavaVersion.current().isJava8Compatible())) {
-        // Doesn't work on Gradle 1.0-1.5
+            // Doesn't work on Gradle 1.0-1.5
             removeIf { it instanceof MavenArtifactRepository && it.url.host == 'repo1.maven.org' }
             removeIf { it instanceof MavenArtifactRepository && it.url.host == 'files.minecraftforge.net' }
             removeIf { it instanceof MavenArtifactRepository && it.url.host == 'maven.minecraftforge.net' }
@@ -33,7 +35,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '1.2-SNAPSHOT'
     }
 }
 
@@ -44,12 +46,16 @@ version = '1.0'
 group = 'com.yourname.modid' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'modid'
 
-sourceCompatibility = targetCompatibility = '1.6' // Need this here so eclipse task generates correctly.
+// Mojang ships Java 8 to end users, so your mod should target Java 8.
+// Need this here so eclipse task generates correctly.
+sourceCompatibility = targetCompatibility = '1.6'
 compileJava {
     sourceCompatibility = targetCompatibility = '1.6'
 }
 
+// Print out JVM information so that we know what version is running. Extremely useful for people to know when helping you.
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
+
 minecraft {
     version = '1.8-11.14.3.1502'
     runDir = 'run'
@@ -57,14 +63,24 @@ minecraft {
     // The mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   Snapshots are built nightly.
     // stable_#            Stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not allways work.
-    // simply re-run your setup task after changing the mappings to update your workspace.
+    //
+    // Use non-default mappings at your own risk. They may not always work.
+    // Simply re-run your setup task after changing the mappings to update your workspace.
     mappings = 'stable_18'
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+
+    // makeObfSourceJar = false // an SRG-named sources jar is made by default. uncomment this to disable.
 }
 
 repositories {
-    // Doesn't work on Gradle 1.0
+    // Put repositories for dependencies here
+    // ForgeGradle automatically adds the Forge maven and Maven Central for you
+
+    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
+    // flatDir {
+    //     dir 'libs'
+    // }
+
+    // Doesn't work on Gradle 1.x
     if ((GradleVersion.current() >= GradleVersion.version('2.0')) && JavaVersion.current().isJava8Compatible()) {
         // Doesn't work on Gradle 1.0-1.5
         removeIf { it instanceof MavenArtifactRepository && it.url.host == 'repo1.maven.org' }
