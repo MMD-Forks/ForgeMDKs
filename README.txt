@@ -55,9 +55,6 @@ Forge source installation
 Minecraft Forge ships with this code and installs it as part of the Forge
 installation process, no further action is required on your part.
 
-For reference this is version @MAJOR@.@MINOR@.@REV@.@BUILD@ of FML
-for Minecraft version 1.7.2.
-
 LexManos' Install Video
 =======================
 https://www.youtube.com/watch?v=8VEdtQLuLO0&feature=youtu.be
